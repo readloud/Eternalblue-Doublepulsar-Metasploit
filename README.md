@@ -15,7 +15,7 @@ sudo cp eternalblue_doublepulsar.rb /usr/share/metasploit-framework/modules/expl
 sudo cp -r deps /usr/share/metasploit-framework/modules/exploits/windows/smb
 ~~~
 
-Now Open the Eternal Blue-Doublepulsar.rb with any Editor and change the path directory for ETERNALBLUE and DOUBLEPULSAR to smb exploit directory usr/share/metasploit-framework/modules/exploits/windows/smb.
+Now Open the [Eternal Blue-Doublepulsar.rb](https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit) with any Editor and change the path directory for ETERNALBLUE and DOUBLEPULSAR to smb exploit directory usr/share/metasploit-framework/modules/exploits/windows/smb.
 ~~~
 sudo nano /usr/share/metasploit-framework/modules/exploits/windows/smb/eternalblue_doublepulsar.rb
 ~~~
@@ -31,9 +31,9 @@ register_options([
 
 Also Read  NSA Malware “EternalBlue” Successfully Exploit and Port into [Microsoft Windows 10](https://answers.microsoft.com/en-us/windows/forum/all/how-to-open-port-in-windows-10-firewall/f38f67c8-23e8-459d-9552-c1b94cca579a)
 
-Then we should specify the name of the process to be injected, we have specified here as 'explorer.exe'
+Then we should specify the name of the process to be injected, we have specified here as *explorer.exe*
 
-Then you should launch msfconsole and use the auxiliary scan module smb_ms17_010.rb.
+Then you should launch msfconsole and use the auxiliary scan module [smb_ms17_010.rb](https://github.com/rapid7/metasploit-framework/modules/auxiliary/scanner/smb).
 ~~~
     dBBBBBBb  dBBBP dBBBBBBP dBBBBBb  .                       o
        '   dB'                     BBP
